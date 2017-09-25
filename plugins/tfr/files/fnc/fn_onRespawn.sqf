@@ -18,4 +18,4 @@ Author:
 // Code begins
 
 // force tfr spectator functionality
-[player, true] call TFAR_fnc_forceSpectator;
+{[player, true] call TFAR_fnc_forceSpectator;} call CBA_fnc_directCall;

@@ -4,7 +4,7 @@ Function: respawn_wave_fnc_onRespawn
 Description:
 	Request respawn timer on the server
 	Respawns unit if respawn timer currently in the respawn window
-	Spawns respawn_wave_fnc_playerTimer
+	Spawns respawn_fnc_wave_playerTimer
 Parameters:
 0:	_unit	- unit that will respawn
 Returns:

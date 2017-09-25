@@ -147,7 +147,7 @@ _isLeader spawn {
 // If radios are already initialized, also reset the settings on current radios
 if (time > 5) then {
 	if (player call respawn_fnc_deadCheck) exitWith {};
-	[player, false] call TFAR_fnc_forceSpectator;
+	{[player, false] call TFAR_fnc_forceSpectator;} call CBA_fnc_directCall;
 
 	if (call TFAR_fnc_haveSWRadio) then {
 		[(call TFAR_fnc_activeSwRadio), _srData] call TFAR_fnc_setSwSettings;
