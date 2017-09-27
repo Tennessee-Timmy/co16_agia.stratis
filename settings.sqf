@@ -1,7 +1,7 @@
 // --- EDIT THIS FILE ---
 // Please CHANGE all the descriptions and names
 // loadScreen and overviewPicture should be the same. (to keep size smaller)
-briefingName = "The Raid of Agia Marina V1.2";
+briefingName = "The Raid of Agia Marina V1.4";
 
 //--- LOADING SCREEN
 // Loading screen shows during loading, overview shows in the mission selection screen

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5092.4971,297.01971,5951.2729};
-		dir[]={-0.74484479,-0.59142077,-0.30930626};
-		up[]={-0.54631072,0.80627608,-0.22686355};
-		aside[]={-0.3835558,6.1513856e-007,0.92363244};
+		pos[]={4948.0806,280.14789,6012.0112};
+		dir[]={0.39685583,-0.49152431,-0.7753517};
+		up[]={0.22402617,0.87077588,-0.43768641};
+		aside[]={-0.89026767,6.1508035e-007,-0.45568064};
 	};
 };
 binarizationWanted=0;
@@ -4749,84 +4749,113 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3218.9243,5.7760239,5816.2061};
+				position[]={3218.9241,5.7760258,5816.2065};
 				angles[]={0,0.78539819,6.282208};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""explosives""]];}";
 				name="ammo_2";
 			};
 			id=1517;
 			type="Box_IND_AmmoOrd_F";
-			atlOffset=0.00012540817;
+			atlOffset=0.00013065338;
 		};
 		class Item72
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3216.7966,5.7779765,5812.1406};
-				angles[]={0,0.52359879,6.2822089};
+				position[]={3216.7961,5.7777014,5812.1411};
+				angles[]={0,0.52359879,6.282208};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""explosives""]];}";
 			};
 			id=1518;
 			type="Box_IND_Grenades_F";
+			atlOffset=0.60400009;
 		};
 		class Item73
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3213.7781,5.6465011,5809.3564};
-				angles[]={0,0,6.2822089};
+				position[]={3213.7783,5.6461315,5809.356};
+				angles[]={0,0,6.282208};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""at""]];}";
 			};
 			id=1519;
 			type="Box_IND_WpsLaunch_F";
+			atlOffset=0.61100006;
 		};
 		class Item74
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3229.6526,5.6683517,5808.6978};
+				position[]={3229.6523,5.6683445,5808.6982};
 				angles[]={0,2.0943952,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""weapons""]];}";
 				name="ammo_1";
 			};
 			id=1520;
 			type="Box_IND_WpsSpecial_F";
-			atlOffset=0.00027799606;
+			atlOffset=0.00027084351;
 		};
 		class Item75
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3226.8667,6.3765111,5805.2085};
-				angles[]={0,2.0943952,6.2822089};
+				position[]={3226.8669,6.3765674,5805.208};
+				angles[]={0,2.0943952,6.282208};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""ammo""]];}";
 			};
 			id=1521;
 			type="I_supplyCrate_F";
+			atlOffset=5.6266785e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""launch_NLAW_F"",""arifle_Mk20_F"",""LMG_Mk200_F"",""FirstAidKit""],[1,2,1,10]],[[""9Rnd_45ACP_Mag"",""30Rnd_9x21_Mag"",""20Rnd_762x51_Mag"",""30Rnd_556x45_Stanag"",""200Rnd_65x39_cased_Box"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareYellow_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_556x45_Stanag_M995_AP_mag"",""ACE_30Rnd_556x45_Stanag_Mk262_mag"",""ACE_30Rnd_556x45_Stanag_Mk318_mag""],[6,6,6,24,3,6,2,2,6,2,6,6,2,2,2,2,2,4,4,4]],[[""Laserdesignator_03"",""acc_flashlight"",""bipod_03_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,2,1,12,12]],[[""B_FieldPack_oli""],[2]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item76
 		{
@@ -4840,6 +4869,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[[""pistol"",10]]];}";
 				name="ammo_4";
 			};
 			id=1522;
@@ -4857,6 +4887,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""bags""]];}";
 				name="ammo_3";
 			};
 			id=1523;
@@ -4868,48 +4899,52 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3233.8398,5.8588076,5813.48};
-				angles[]={0,3.6651917,6.2822089};
+				position[]={3233.8396,5.8584266,5813.48};
+				angles[]={0,3.6651914,6.282208};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""generic""]];}";
 			};
 			id=1524;
 			type="Box_AAF_Equip_F";
+			atlOffset=0.56599998;
 		};
 		class Item79
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3229.0823,5.6732159,5817.4253};
-				angles[]={0,4.1887903,6.2822089};
+				position[]={3229.0823,5.6734338,5817.4248};
+				angles[]={0,4.1887903,6.282208};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""meds""]];}";
 			};
 			id=1525;
 			type="ACE_medicalSupplyCrate_advanced";
+			atlOffset=0.00021791458;
 		};
 		class Item80
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3215.136,5.6451745,5808.0786};
-				angles[]={0,1.5707964,6.2822089};
+				position[]={3215.1362,5.645113,5808.0791};
+				angles[]={0,1.5707964,6.282208};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
+				init="call{this setVariable [""unit_loadout_faction"",east];" \n "this setVariable [""unit_loadout_cargoType"",[""at""]];}";
 			};
 			id=1526;
 			type="Box_IND_WpsLaunch_F";
+			atlOffset=0.5999999;
 		};
 		class Item81
 		{

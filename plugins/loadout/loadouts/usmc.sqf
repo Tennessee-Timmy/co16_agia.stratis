@@ -104,7 +104,7 @@ _voices = ["male01eng","male02eng","male03eng","male04eng"];
 #define NADE_SMOKEPURPLE	"rhs_mag_m18_purple"
 
 // Common Attachments
-#define COMMONSCOPE			"FHQ_optic_AimM_BLK"
+#define COMMONSCOPE			"rhsusf_acc_compm4"
 #define COMMONLASER			"rhsusf_acc_M952V"
 #define COMMON_BINO			""
 
@@ -215,7 +215,7 @@ _latKit = [LAT,[LATMAG,2],[LATMAG2,2]];
 _matKit = [MAT,[MATMAG,2]];
 _aaKit = [AA,[AAMAG,2]];
 _marksmanKit = [MARKSMANRIFLE,[MARKSMANRIFLEMAG,4],[MARKSMANRIFLEMAG2,4]];
-_sniperKit = [SNIPER,[SNIERMAG,5],[SNIPERMAG2,5]];
+_sniperKit = [SNIPER,[SNIERMAG,5],[SNIPERMAG2,1]];
 _pistolKit = [PISTOL,[PISTOLMAG,3]];
 _pistol2Kit = [PISTOL2,[PISTOLMAG2,3]];
 _smgKit = [SMG,[SMGMAG,4]];
@@ -773,6 +773,8 @@ _ammoCargo = [
 	[LMGMAG2,5],
 	[MMGMAG,5],
 	[MMGMAG2,5],
+	[MARKSMANRIFLEMAG,5],
+	[MARKSMANRIFLEMAG2,5],
 	[((_marksmanKit select 1)select 0),10],
 	[((_marksmanKit select 2)select 0),10],
 	[((_pistolKit select 1)select 0),5],
@@ -788,7 +790,10 @@ _ammoBigCargo = [
 	[LMGMAG2,15],
 	[MMGMAG,20],
 	[MMGMAG2,10],
-	//[HATAMMO,5],
+	[MARKSMANRIFLEMAG,10],
+	[MARKSMANRIFLEMAG2,10],
+	[SNIPERMAG,5],
+	[SNIPERMAG2,1],
 	[((_marksmanKit select 1)select 0),30],
 	[((_marksmanKit select 1)select 0),30],
 	[((_pistolKit select 1)select 0),20],
