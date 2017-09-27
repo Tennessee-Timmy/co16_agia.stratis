@@ -32,6 +32,7 @@
 #include "cleaner\files\main.cpp"
 #include "ace3\files\main.cpp"
 #include "jip\files\main.cpp"
+#include "score\files\main.cpp"
 
 // Put any extra (homebrew) plugins here:
 
