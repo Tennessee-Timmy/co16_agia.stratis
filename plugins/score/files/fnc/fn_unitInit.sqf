@@ -1,21 +1,22 @@
 /* ----------------------------------------------------------------------------
-Function: tfr_fnc_onRespawn
+Function: score_fnc_unitInit
 
 Description:
-	onRespawn script for respawn system
-	Enable spectator functionality
+	Function that runs on unit init
 
 Parameters:
 	none
 Returns:
 	nothing
 Examples:
-	call tfr_fnc_onRespawn;
+	Runs in postInit eh
+
 Author:
 	nigel
 ---------------------------------------------------------------------------- */
 #include "script_component.cpp"
 // Code begins
 
-// force tfr spectator functionality
-[player, true] spawn TFAR_fnc_forceSpectator;
+params ["_unit"];
+
+_unit setVariable ["unit_score_side",(side (group _unit)),true];

@@ -4,6 +4,10 @@ class PLUGIN {
 		class setParams {postInit = 1;};
 		class postInit {postInit = 1;};
 	};
+	class fnc {
+		file = QPLUGIN_PATHFILE(fnc);
+		class onRespawn {};
+	};
 	class menus {
 		file = QPLUGIN_PATHFILE(menus);
 		class menu {};

@@ -42,7 +42,7 @@ private _nil = {
 	// get values to save later...
 	_task params ["_target","_group","_description",["_destination",[]],["_type","default"],["_state","CREATED"]];
 	_conditions params [["_condAdd",{true}],["_condWin",{false}],["_condLose",{false}]];
-	_code params [["_codeAdd",{}],["_codeWin",{}],["_codeLose",{}]];
+	_code params [["_codeAdd",{}],["_codeWin",{}],["_codeLose",{}],["_respawn",false]];
 
 	if (_destination isEqualType objNull && {isNull _destination}) then {_destination = []};
 	if (_destination isEqualType [] && {(_destination param [0]) isEqualType objNull}) then {
@@ -110,6 +110,9 @@ private _nil = {
 			private _taskIDUpdate = [_taskVar, "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 			call _codeWin;
 			_currentState = 'done';
+			if (_respawn && ("respawn" in mission_plugins)) then {
+				[_taskTarget] call respawn_fnc_respawn;
+			};
 		};
 
 		// Check if task is failed yet
@@ -169,7 +172,7 @@ private _nil = {
 		[_target,_group,_description,_destination,_type,_state],
 		_priority,
 		[_condAdd,_condWin,_condLose],
-		[_codeAdd,_codeWin,_codeLose],
+		[_codeAdd,_codeWin,_codeLose,_respawn],
 		_currentState
 	];
 	false

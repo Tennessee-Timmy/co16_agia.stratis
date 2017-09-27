@@ -27,10 +27,13 @@ if !(isServer) exitWith {};
 // Change unit group owner
 if (_target isKindOf "CAManBase") exitWith {
 	if ((owner _target) isEqualTo (owner mission_headless_obj)) exitWith {};
-	group _target setGroupOwner (owner mission_headless_obj);
+	(group _target) setGroupOwner (owner mission_headless_obj);
 };
 
 if !(_target isKindOf "Module_F") then {
+
+	if ((owner _target) isEqualTo (owner mission_headless_obj)) exitWith {};
+
 	// Change object owner
 	_target setOwner (owner mission_headless_obj);
 };

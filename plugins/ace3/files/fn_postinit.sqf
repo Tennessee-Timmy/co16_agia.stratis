@@ -23,6 +23,10 @@ waitUntil {!isNil "mission_ace3_enabled"};
 private _enabled = (missionNamespace getVariable ["mission_ace3_enabled",true]);
 if !(_enabled) exitWith {};
 
+//
+if (isServer && ("respawn" in mission_plugins)) then {
+    [[""],{call ace3_fnc_onRespawn},"onRespawn",true] call respawn_fnc_scriptAdd;
+};
 
 //ACE 3 CUSTOM =================================================================
 

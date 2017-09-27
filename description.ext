@@ -17,7 +17,7 @@ class CfgRespawnTemplates
 	};
 };
 respawnTemplates[] = {"mission_respawn"};
-respawn = "BASE";
+respawn = 3;
 respawnDelay = 0;
 respawnButton = 1;
 respawnDialog = 0;
@@ -110,4 +110,11 @@ class CfgDebriefing {
 	#define MISSION_PLUGIN_DEBRIEFING
 		#include "plugins\plugins.cpp"
     #undef MISSION_PLUGIN_DEBRIEFING
+};
+
+// Debriefing sections
+class CfgDebriefingSections {
+	#define MISSION_PLUGIN_DEBRIEFINGSECTIONS
+		#include "plugins\plugins.cpp"
+	#undef MISSION_PLUGIN_DEBRIEFINGSECTIONS
 };

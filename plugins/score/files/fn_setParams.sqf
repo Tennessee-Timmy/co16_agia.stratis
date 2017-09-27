@@ -1,21 +1,23 @@
 /* ----------------------------------------------------------------------------
-Function: tfr_fnc_onRespawn
+Function: score_fnc_setParams
 
 Description:
-	onRespawn script for respawn system
-	Enable spectator functionality
+	Set score params / runs on server
+	It runs in postInit automatically
 
 Parameters:
 	none
 Returns:
 	nothing
 Examples:
-	call tfr_fnc_onRespawn;
+	call zeus_fnc_setParams;
+
 Author:
 	nigel
 ---------------------------------------------------------------------------- */
+if !(isServer) exitWith {};
 #include "script_component.cpp"
-// Code begins
-
-// force tfr spectator functionality
-[player, true] spawn TFAR_fnc_forceSpectator;
+// Script begins
+/*
+private _real = ["p_settings_reset", 0] call BIS_fnc_getParamValue;
+*/

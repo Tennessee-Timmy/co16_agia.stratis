@@ -8,8 +8,8 @@ Description:
 	Disallows damage from _newUnit
 	Runs respawn_fnc_runOnRespawnScipts
 Parameters:
-0:	_oldUnit		- Unit which is dead
-1:	_killer			- Killer
+0:	_newUnit		- New Unit
+1:	_oldUnit		- Old unit
 2:	_respawn		- Respawn type
 3:	_respawnDelay	- Respawn delay
 Returns:

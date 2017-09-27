@@ -22,6 +22,12 @@ Author:
 
 if !(isServer) exitWith {};
 
+private _srvEndCodes = missionNamespace getVariable ["mission_tasks_srvEndCodes",[]];
+{
+	call _x;
+	false
+} count _srvEndCodes;
+
 // Get winners
 private _winSides = missionNamespace getVariable ["mission_tasks_winSides",TASKS_SETTING_ENDING_SIDES_AUTO];
 

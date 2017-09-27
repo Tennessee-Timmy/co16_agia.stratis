@@ -43,6 +43,21 @@
 #define TASKS_SETTING_ENDING_ENABLE true
 // ----------------------------------------------------------------------------
 
+// ----------------------------------------------------------------------------
+//Setting: tasks_setting_respawn
+//Description:
+//	Default tasks to respawn everyone
+//	However I suggest
+//	[west] call respawn_fnc_respawn; used as task complete code instead. Especially when using respawn types
+//	OVERRIDE: mission_tasks_respawn = (bool);
+//
+//Values:
+//		true	- All tasks default to respawning
+//		false	- All tasks default to not respawning
+// ----------------------------------------------------------------------------
+#define TASKS_SETTING_RESPAWN false
+// ----------------------------------------------------------------------------
+
 //-----------------------------------------------------------------------------
 //Setting: tasks_setting_ending_win
 //Description:

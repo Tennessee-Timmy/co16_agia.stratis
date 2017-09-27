@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: ace_spec_fnc_menu
+Function: ace3_fnc_menu
 
 Description:
 	Creates the dialog in the mission menu (menus plugin)
@@ -9,7 +9,7 @@ Parameters:
 Returns:
 	nothing
 Examples:
-	call ace_spec_fnc_menu;
+	call ace3_fnc_menu;
 
 Author:
 	nigel

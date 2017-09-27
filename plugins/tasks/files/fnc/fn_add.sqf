@@ -45,6 +45,7 @@ Parameters:
 	0:	_condAdd		- Condition which must be true for the task to be added
 	1:	_condWin		- Condition which must be true for the task to be completed
 	2:	_condLose		- Condition which must be true for the task to be failed
+	3:	_respawn		- respawn units this task was given to on completion
 
 4:	_code			- Code to run on certain stages of the task (runs on server)
 	0:	_codeAdd		- Code to run when task is added
@@ -76,9 +77,10 @@ if !(isserver) exitWith {};
 
 params ["_taskVar","_task",["_priority",2],["_conditions",[{true},{false},{false}]],["_code",[{},{},{}]]];
 
+private _defRespawn = missionNamespace getVariable ["mission_tasks_respawn",TASKS_SETTING_RESPAWN];
 _task params ["_target",["_group",[]],"_description",["_destination",[]],["_type","default"],["_state","CREATED"]];
 _conditions params [["_condAdd",{true}],["_condWin",{false}],["_condLose",{false}]];
-_code params [["_codeAdd",{}],["_codeWin",{}],["_codeLose",{}]];
+_code params [["_codeAdd",{}],["_codeWin",{}],["_codeLose",{}],["_respawn",_defRespawn]];
 
 
 if (_destination isEqualType objNull && {isNull _destination}) then {_destination = []};
@@ -141,7 +143,7 @@ _taskList pushBack [
 	[_target,_newGroup,_description,_destination,_type,_state],
 	_priority,
 	[_condAdd,_condWin,_condLose],
-	[_codeAdd,_codeWin,_codeLose],
+	[_codeAdd,_codeWin,_codeLose,_respawn],
 	_currentState
 ];
 

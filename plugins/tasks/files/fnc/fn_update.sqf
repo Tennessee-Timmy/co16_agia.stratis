@@ -67,7 +67,7 @@ _matchedTask params ["_taskVarOld","_task","_priority","_conditionsOld","_code",
 // get old values to save later...
 _task params ["_target","_group","_description",["_destination",[]],["_type","default"],["_state","CREATED"]];
 _conditionsOld params [["_condAdd",{true}],["_condWin",{false}],["_condLose",{false}]];
-_code params [["_codeAdd",{}],["_codeWin",{}],["_codeLose",{}]];
+_code params [["_codeAdd",{}],["_codeWin",{}],["_codeLose",{}],["_respawn",false]];
 _description params [["_desc",''],["_dtitle",'']];
 
 // get new values (use old as defaults)
@@ -107,9 +107,19 @@ if !(_stateNew isEqualTo _state) then {
 	private _taskID = [_taskVarNew, _stateNew,true] spawn BIS_fnc_taskSetState;
 
 	call {
+
+		// get tasktarget
+		private _taskTarget = _target;
+		if (_taskTarget isEqualType "") then {
+			_taskTarget = call compile _taskTarget;
+		};
 		if ((toUpper _stateNew) isEqualTo "SUCCEEDED") exitWith {
 			call _codeWin;
 			_currentStateNew = 'done';
+			if (_respawn && ("respawn" in mission_plugins)) then {
+				[_taskTarget] call respawn_fnc_respawn;
+			};
+
 		};
 		if ((toUpper _stateNew) in ["ASSIGNED","CREATED","AUTOASSIGNED","RESET"]) exitWith {
 			_currentStateNew = 'added';
@@ -121,10 +131,6 @@ if !(_stateNew isEqualTo _state) then {
 				private _endingEnabled = missionNamespace getVariable ["tasks_setting_ending_enable",TASKS_SETTING_ENDING_ENABLE];
 				if (_endingEnabled) then {
 
-					private _taskTarget = _target;
-					if (_taskTarget isEqualType "") then {
-						_taskTarget = call compile _taskTarget;
-					};
 
 					[_taskTarget,false] call tasks_fnc_setWinners;
 
@@ -155,7 +161,7 @@ _taskList pushBack [
 	[_target,_group,_newDescription,_newDestination,_type,_stateNew],
 	_priority,
 	[_newCondAdd,_newCondWin,_newCondLose],
-	[_codeAdd,_codeWin,_codeLose],
+	[_codeAdd,_codeWin,_codeLose,_respawn],
 	_currentStateNew
 ];
 
